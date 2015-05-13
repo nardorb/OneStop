@@ -1,0 +1,34 @@
+// Pull in third-party stuff first.
+@import "third-party/bootstrap/bootstrap.less";
+@import "third-party/bootstrap/responsive.less";
+@import "third-party/font-awesome/font-awesome.less";
+@import "third-party/datepicker.less";
+@import "third-party/daterangepicker.less";
+@import "third-party/timepicker.less";
+
+// Common things and sharable components
+@import "variables.less"; // Variables
+@import "general.less"; // General styles
+
+// Not needed for this project
+// TODO(jchung): Remove once we go production.
+//               Slows down local development with the extra requests.
+// @import "fonts.less"; // Font definitions
+@import "mixins.less"; // Generic mixins
+
+// Layout and styling across all pages
+@import "navigation.less"; // Navigation (navbar and such)
+@import "notification_bar.less"; // Notification bar at the top of the page.
+@import "footer.less"; // Footer
+
+// Styles for specific pages
+@import "home.less";
+@import "dashboard.less";
+@import "login.less";
+@import "signup.less";
+@import "forgot_password.less";
+@import "about.less";
+@import "contact.less";
+
+// Styles for corp pages that extend the existing pages
+@import "corporate/project.less";

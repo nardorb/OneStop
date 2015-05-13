@@ -1,0 +1,10 @@
+-extends "base.haml"
+
+-block body
+  -include "components/corporate/navbar_private.haml"
+
+  .content.container
+    -include "components/corporate/manager_dashboard_navigation.haml"
+    -block content
+
+  -include "components/footer.haml"

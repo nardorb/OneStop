@@ -1,0 +1,41 @@
+-extends "corporate/private_base.haml"
+
+-set title = "Taxi Drivers"
+
+-block content
+  -include "modals/taxi_driver_create.haml"
+  %button.pull-right.btn.btn-success.btn-large(role="button", \
+    data-modal="modal")
+    %i.icon-plus
+    Add taxi driver
+
+  %p.lead Drivers
+
+  %table.table.table-striped.table-hover.table-bordered
+    %thead: %tr
+      %th Name
+      %th Email
+      %th Driver's License #
+      %th Sex
+      %th Address
+      %th Telephone #
+    %tbody
+      -for taxi_driver in current_account.get_TaxiDriver()
+        %tr
+          %td #{taxi_driver.name}
+          %td #{taxi_driver.email}
+          %td #{taxi_driver.driver_id}
+          %td #{taxi_driver.sex}
+          %td #{taxi_driver.address}
+          %td #{taxi_driver.tel_number}
+          %td #{taxi_driver.on_duty}
+            %a.btn(href="#{uri_for('taxi_driver.update', id=taxi_driver.key().id())}")
+              %i.icon-edit
+              Update driver
+            %a.btn.btn-danger(href="#{uri_for('taxi_driver.delete', id=taxi_driver.key().id())}")
+              %i.icon-trash
+              Delete driver
+      -else
+        %tr
+          %td(colspan="3")
+            No drivers have been added added yet.

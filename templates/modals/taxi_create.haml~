@@ -1,0 +1,11 @@
+-import "form_macros.haml" as form_macros
+
+%div#modal.modal.hide.fade(role="dialog")
+  %form.form-horizontal(action="#{uri_for('bus.create')}", method="POST")
+    %div.modal-header
+      %button.close(type="button", data-dismiss="modal") &times;
+      %h3 Add new bus
+    %div.modal-body
+      #{form_macros.form_fields(form)}
+    %div.modal-footer
+      #{form_macros.submit_button()}

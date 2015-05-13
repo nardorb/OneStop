@@ -1,0 +1,13 @@
+PUBLIC_DOMAIN = 'onestopplus.appspot.com'
+PUBLIC_HOST = 'http://www.%s' % PUBLIC_DOMAIN
+PUBLIC_TWITTER = 'https://twitter.com/onestopplus'
+PUBLIC_FACEBOOK = 'https://www.facebook.com/onestopplus'
+PRODUCT_NAME = 'OneStopPlus'
+CONTACT_EMAIL = 'contact@%s' % PUBLIC_DOMAIN
+SUPPORT_EMAIL = 'support@%s' % PUBLIC_DOMAIN
+NO_REPLY_EMAIL = 'noreply@%s' % PUBLIC_DOMAIN
+HELP_EMAIL = 'help@%s' % PUBLIC_DOMAIN
+FULL_HELP_EMAIL = '"%s" <%s>' % (PRODUCT_NAME, HELP_EMAIL)
+FULL_NO_REPLY_EMAIL = '"%s" <%s>' % (PRODUCT_NAME, NO_REPLY_EMAIL)
+FULL_SUPPORT_EMAIL = '"%s Support" <%s>' % (PRODUCT_NAME, SUPPORT_EMAIL)
+FULL_LOGS_EMAIL = '"%s Logs" <logs@%s>' % (PRODUCT_NAME, PUBLIC_DOMAIN)

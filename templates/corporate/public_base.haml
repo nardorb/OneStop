@@ -1,0 +1,12 @@
+-extends "base.haml"
+
+-block body
+  -if current_profile
+    -include "components/corporate/navbar_private.haml"
+  -else
+    -include "components/corporate/navbar_public.haml"
+
+  .content
+    -block content
+
+  -include "components/footer.haml"

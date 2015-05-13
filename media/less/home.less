@@ -1,0 +1,111 @@
+
+.homepage {
+    background-image: url("/media/images/backgrounds/bcg.png");
+
+  &#corporate {
+    #corporate.homepage;
+  } // &#corporate
+
+  @media(@non-mobile) {
+    .overlay {
+      top: 0;
+      z-index: 1;
+      position: absolute;
+      width: 49%;
+      background-repeat: repeat-x;
+      height: 390px;
+
+    } // .overlay
+
+  } // @media(@non-mobile)
+
+  .container-fluid {
+    color: #6b8793;
+    font-size: 14px;
+    position: relative;
+    z-index: 5;
+    
+
+    @media(@non-mobile) {
+      background-image: url("/media/images/backgrounds/bcg.png");
+      background-repeat: no-repeat;
+      background-position: center -80px;
+    } // @media(@non-mobile)
+
+    #banner {
+
+      p {
+        display: block;
+        font-style: italic;
+        font-size: 20px;
+        color: #FFF;
+        margin-top: 10em;
+        margin-left: 5em;
+        margin-bottom: 3em;
+      } // p
+
+     
+    } // #banner
+
+    #banner-caption {
+      p {
+	      line-height: 24px;
+	      font-style: italic;
+	      font-size: 18px;
+      	color: #6b8793;
+      	margin: 15px 0;
+
+
+      } // p
+
+    } // #banner-caption
+
+  } // .container-fluid
+
+  .container {
+    .section {
+      padding-top: 20px;
+
+      h2 {
+        line-height: 1.3em;
+        margin-bottom: 0.5em;
+        font-weight: normal;
+        font-size: 1.5em;
+        color: #0072a3;
+      } // h2
+
+      p {
+        font-size: 14px;
+        color: #6b8793;
+      } // p
+
+
+
+    } // .section
+
+    .comments {
+      padding-top: 20px;
+
+      li {
+        list-style: none;
+      } // li
+
+      h3 {
+        font-size: 1.5em;
+        font-weight: normal;
+        line-height: 1.3em;
+        margin-bottom: 0.5em;
+      } // h3
+
+      p {
+        color: #6b8793;
+        margin-right: 40px;
+        padding-bottom: 10px;
+        font-style: italic;
+      } // p
+    } // .comments
+
+
+  } // .container
+
+} // .homepage

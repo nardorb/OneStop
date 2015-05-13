@@ -1,0 +1,13 @@
+-extends "corporate/public_base.haml"
+
+-set title = "Profile Activation"
+
+-import "form_macros.haml" as form_macros
+
+-block content
+  .container
+    %form#signup-form.form-horizontal(action=".", method="POST")
+      %fieldset
+        %legend Activate Profile: #{profile.email}
+        #{form_macros.form_fields(form)}
+        #{form_macros.submit_button(submit_title='Activate Profile')}

@@ -1,0 +1,57 @@
+-extends "public_base.haml"
+
+-set title = "Login"
+
+-block content
+  #login: .container
+    .row.login
+      .span7
+        %h4 Log in to your account
+
+        .features.clearfix
+          %div
+            .feature
+              %i.icon-fire
+              %p
+                %strong Charter a Taxi in a flash!
+            .feature
+              %i.icon-fire
+              %p
+                %strong Your chartering needs all at your finger tips!
+            .feature
+              %i.icon-fire
+              %p
+                %strong Feature
+
+      .span3.clear-fix.login-box
+
+        -if error
+          .login-error
+            %strong Sorry!
+            We didn't recognize that e-mail and password combination.
+            Give it another try
+
+        %form(action="#{uri_for('login')}", method="POST")
+          %input#redirect(type="hidden", name="redirect", \
+                          value="#{request.get('redirect')}")
+
+          %input#email(type="email", name="email", required="required", \
+                       value="#{request.POST.get('email') or ''}", \
+                       placeholder="E-mail address")
+
+          %input#password(type="password", name="password", \
+                          required="required", placeholder="Password", \
+                          autocomplete="off")
+
+          .forgot-password-link
+            Forgot your password?
+            %a(href="#{uri_for('forgot-password')}") Recover it here.
+
+          .no-account-link
+            %a(href="#{uri_for('signup')}") Create an account.
+
+          .button-container
+            %button.login(type="submit", data-spinner="Logging in...")
+              %i.icon-lock"
+              &nbsp;
+              Login to #{constants.PRODUCT_NAME}

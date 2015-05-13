@@ -1,0 +1,35 @@
+-extends "corporate/public_base.haml"
+-set title = "Find Routes"
+
+-block content
+  #search-routes: .container
+    .row
+      .span8
+        %form#search-form.form-horizontal(action="#{uri_for('search')}", method="POST")
+          %fieldset
+            %legend Find Bus Routes
+
+            -if form.errors
+              %ul.errors
+                -for field_name, field_errors in form.errors|dictsort if field_errors
+                  -for error in field_errors
+                    %li {{ form[field_name].label }}: {{ error }}
+
+            .control-group
+              %label.control-label(for="bus_number")
+                Bus Number
+              .controls
+                %input#first_name(name="bus_number", type="text")
+
+            .control-group
+              %label.control-label(for="location")
+                Location
+              .controls
+                %input#last_name(name="location, type="text")
+
+
+            %button.btn.btn-large.btn-primary(type="submit", data-spinner="Signing in...") Search
+
+      .span4
+        -include "components/corporate/commentary.haml"
+

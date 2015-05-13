@@ -1,0 +1,23 @@
+#corporate.navbar.navbar-static-top: .navbar-inner: .container
+    %a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+
+    %a.brand(href="#{uri_for('home')}")
+      %img.logo(src="/media/images/branding/logo.png")
+
+    .nav-collapse.collapse
+      %ul.nav.pull-right
+        -set active_tab = {request.path: 'active'}
+        %li(class="#{active_tab.get(uri_for('home'), '')}")
+          %a(href="#{uri_for('home')}") Home
+
+        %li(class="#{active_tab.get(uri_for('signup'), '')}")
+          %a(href="#{uri_for('signup')}") Signup
+
+        %li(class="#{active_tab.get(uri_for('login'), '')}")
+          %a(href="#{uri_for('login')}") Member Login
+
+        %li(class="#{active_tab.get(uri_for('contact'), '')}")
+          %a(href="#{uri_for('contact')}") Contact Us

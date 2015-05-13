@@ -1,0 +1,52 @@
+application: onestop-plus
+version: autodeployed
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+builtins:
+- remote_api: on
+- appstats: on
+- deferred: on
+
+inbound_services:
+- mail
+- xmpp_message
+- warmup
+
+libraries:
+- name: jinja2
+  version: "2.6"
+
+- name: webapp2
+  version: latest
+
+# Defaults as well as ignoring less files (we don't
+# need to serve those in production)
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.less
+- ^(.*/)?environment/
+
+handlers:
+- url: /favicon\.ico
+  static_files: media/favicon.ico
+  upload: media/favicon.ico
+
+- url: /media/
+  static_dir: media/
+
+- url: /robots\.txt
+  static_files: robots.txt
+  upload: robots.txt
+
+- url: .*
+  script: main.app

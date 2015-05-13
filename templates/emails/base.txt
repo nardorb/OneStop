@@ -1,0 +1,6 @@
+{% block content %}{% endblock %}
+
+Sincerely,
+
+The {{ constants.PRODUCT_NAME }} Team
+{{ constants.PUBLIC_HOST }}

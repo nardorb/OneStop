@@ -1,0 +1,47 @@
+-extends "corporate/private_base.haml"
+
+-set title = "Taxis"
+
+-block content
+  -include "modals/taxi_create.haml"
+  %button.pull-right.btn.btn-success.btn-large(role="button", \
+    data-modal="modal")
+    %i.icon-plus
+    Add new taxi
+
+  %p.lead Taxi
+
+  %table.table.table-striped.table-hover.table-bordered
+    %thead: %tr
+      %th License Plate
+      %th Vehicle Type
+      %th Make
+      %th Model
+      %th color
+      %th Driver
+      %th Operational
+      %th
+    %tbody
+      -for taxi in current_account.get_Taxi()
+        %tr
+          %td #{taxi.license_plate}
+          %td #{taxi.vehicle_type}
+          %td #{taxi.make}
+          %td #{taxi.model}
+          %td #{taxi.color}
+          %td #{taxi.taxi_driver.name}
+          %td #{taxi.is_operational}
+          %td
+            %a.btn(href="#{uri_for('taxi.assign_driver', id=taxi.key().id())}")
+              %i.icon-edit
+              Assign driver
+            %a.btn(href="#{uri_for('taxi.update', id=taxi.key().id())}")
+              %i.icon-edit
+              Update Taxi
+            %a.btn.btn-danger(href="#{uri_for('taxi.delete', id=taxi.key().id())}")
+              %i.icon-trash
+              Delete Taxi
+      -else
+        %tr
+          %td(colspan="3")
+            No Taxis have been added added yet.

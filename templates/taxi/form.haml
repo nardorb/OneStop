@@ -1,0 +1,21 @@
+-extends "corporate/private_base.haml"
+
+-set title = "Taxis"
+
+-import "form_macros.haml" as form_macros
+
+-block content:
+  .container
+    %p.lead
+      %a(href="#{uri_for('taxi.list')}") Bus
+      &raquo;
+      -if 'update' in request.url
+        Update Taxi
+      -elif 'assign_driver' in request.url
+        Assign driver
+      -elif 'create' in request.url
+        Add Taxi
+
+    %form.form-horizontal(action=".", method="POST")
+      #{form_macros.form_fields(form)}
+      #{form_macros.submit_button()}

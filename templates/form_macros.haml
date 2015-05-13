@@ -1,0 +1,45 @@
+-macro form_field_label(cls)
+  %label.control-label(for="#{cls.id}")
+    #{cls.label.text}
+
+-macro form_field_description(cls)
+  -if cls.description
+    %span.help-block #{cls.description}
+
+-macro form_field_errors(cls)
+  -if cls.errors
+    -for error in cls.errors if error
+      %span.help-inline #{error}
+
+-macro submit_button(submit_title="Save Changes", spinner_title="Saving...", \
+                     submit_class=None)
+  -if not submit_class
+    -set submit_class = ''
+  %div.form-actions
+    %button.btn.btn-primary.btn-large(class="#{submit_class}", \
+                         type="submit", data-spinner="#{spinner_title}")
+      #{submit_title}
+
+-macro form_field(cls)
+  -set error_class = ''
+  -if cls.errors
+    -set error_class = 'error'
+  %div.control-group(class="#{error_class}")
+    -if cls.type == 'HiddenField'
+      #{cls}
+    -else
+      #{form_field_label(cls)}
+      %div.controls
+        #{cls(**kwargs)}
+        #{form_field_errors(cls)}
+        #{form_field_description(cls)}
+
+-macro form_fields(cls, class=None, legend=None)
+  %fieldset(class="#{class}")
+    -if legend
+      %legend #{legend}
+    -for field in cls if field
+      -if field.type == 'HiddenField'
+        #{field()}
+      -else
+        #{form_field(field)}

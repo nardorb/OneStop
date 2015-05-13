@@ -1,0 +1,73 @@
+footer {
+  background-color:  #84978F;
+  color:  #D74B4B;
+  margin-top: 20px;
+  font-size: 16px;
+
+  &#corporate-footer {
+    background-color: #84978F;
+    color: #D74B4B;
+    min-height: 200px;
+
+    .container ul {
+      li {
+        border-bottom: 1px solid  #354B5E;
+      } // li
+
+    } // .container ul
+
+  } // &#corp-footer
+
+  @media(@mobile) {
+    margin-left: -20px;
+    margin-right: -20px;
+  } // @media(@mobile)
+
+  a {
+    color: #D74B4B;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #FFF;
+      text-decoration: none;
+      cursor: pointer;
+    } // &:hover
+
+  } //a
+
+  .container {
+    .center-block();
+    padding: 20px 0;
+
+    .copyright {
+      margin-top: 10px;
+
+      @media(@mobile) {
+        padding: 0 20px;
+      } // @media(@mobile)
+
+      p {
+        margin-bottom: 1em;
+      } // p
+
+    } // .copyright
+
+    ul {
+      list-style: none;
+
+      @media(@mobile) {
+        padding: 0 20px;
+        margin-bottom: 2em;
+      } // @media(@mobile)
+
+      li {
+        border-bottom: 1px solid #354B5E;
+        padding: 8px 0 8px 0;
+      } // li
+
+    } // ul
+
+  } // .container
+
+} // footer

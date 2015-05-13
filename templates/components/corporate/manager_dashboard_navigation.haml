@@ -1,0 +1,10 @@
+%ul.nav.nav-pills
+  -set active_tab = {request.path: 'active'}
+  %li(class="#{active_tab.get(uri_for('home'), '')}")
+    %a(href="#{uri_for('home')}") Summary
+  %li(class="#{active_tab.get(uri_for('taxi.list'), '')}")
+    %a(href="#{uri_for('taxi.list')}") Taxis
+  %li(class="#{active_tab.get(uri_for('taxi_driver.list'), '')}")
+    %a(href="#{uri_for('taxi_driver.list')}") Drivers
+  %li(class="#{active_tab.get(uri_for('order.list'), '')}")
+    %a(href="#{uri_for('order.list')}") Orders

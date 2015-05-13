@@ -1,0 +1,37 @@
+-extends "corporate/private_base.haml"
+
+-set title = "Orders"
+
+-block content
+  -include "modals/order_create.haml"
+  %button.pull-right.btn.btn-success.btn-large(role="button", \
+    data-modal="modal")
+    %i.icon-plus
+    Add new order
+
+  %p.lead Order
+
+  %table.table.table-striped.table-hover.table-bordered
+    %thead: %tr
+      %th Origin
+      %th Destination
+      %th Passengers
+      %th Comments
+      %th Profile
+      %th
+    %tbody
+      -for order in current_account.get_Orders()
+        %tr
+          %td #{order.origin}
+          %td #{order.destination}
+          %td #{order.passengers}
+          %td #{order.comments}
+          %td #{order.profile.name}
+          %td
+            %a.btn.btn-danger(href="#{uri_for('order.delete', id=order.key().id())}")
+              %i.icon-trash
+              Delete Order
+      -else
+        %tr
+          %td(colspan="3")
+            No Orders have been added added yet.
