@@ -1,20 +1,24 @@
-body {
-	background-image: url('/media/images/backgrounds/bck.jpg');
+body { 
+	background-image: url('media/images/sectionbackgrd.jpg');
 }
 
 
-#map-outer {
-	height: 440px;
-	padding: 20px;
-	border: 2px solid #CCC;
-	margin-bottom: 20px;
-	background-color:#FFF
+#map-outer {  
+	height: 440px; 
+	padding: 20px; 
+	border: 2px solid #CCC; 
+	margin-bottom: 20px; 
+	background-color:#FFF 
 }
 
-#map-canvas{
-	height: 400px
+#map-canvas{ 
+	height: 400px 
 }
 
 @media all and (max-width: 991px) {
 	#map-outer  { height: 650px }
+}
+
+#send{
+	font-family: 'Merriweather', serif;
 }

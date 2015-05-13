@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <title>Plus+ Drivers - Sign Up</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/media/order.css">
+    <link rel="stylesheet" type="text/css" href="/media/test.css">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script src="order.js"></script>
+
+  </head>
+
+  <body>
+    <section id = "section1" data-speed = "6" data-type = "background">
+        <!-- header -->
+        <header class="header">
+          <div class = "container">
+            <div class="page-header">
+              <h1 class = "main-head">OneStopPlus<div class = "plus"><b>+</b></div> <small>Ultimate travel experience</small></h1>
+            </div>
+          </div>
+        </header>
+        <!-- header -->
+
+        <!-- Navbar -->
+           <div class = "navbar navbar-default navbar-fixed-top">
+              <div class = "container">
+                <div class = "navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a href="/" class="navbar-brand shimmer">OneStopPlus<div class = "plus shimmer"><b>+</b></div></a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+           </div>
+        <!-- Navabar -->
+
+        <!-- Form -->
+        <br>
+      <div class ="container">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <!-- Form Name -->
+            <legend>Plus+ Driver Sign Up</legend>
+
+              <!-- Test -->
+              <form class="form-horizontal" action="/driver_signup/" method="POST">
+                <div class="form-group">
+                  <label for="First Name" class="col-sm-2 control-label">First Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="Last Name" class="col-sm-2 control-label">Last Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="col-sm-2 control-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="password" class="col-sm-2 control-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="confirmpassword" class="col-sm-2 control-label">Password Confirmation</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password Confirmation">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sex" class="col-sm-2 control-label">Sex</label>
+                  <div class="col-sm-10">
+                    <input type="sex" class="form-control" id="sex" name="sex" placeholder="Sex">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="Date of Birth" class="col-sm-2 control-label">Date of Birth</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="dob" name="dob" placeholder="Date of Birth">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address1" class="col-sm-2 control-label">Address</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <label for="parish" class="col-sm-2 control-label">Parish</label>
+                  <div class="col-sm-10">
+                    <select class="form-control" name="parish">
+                      <option>Hanover</option>
+                      <option>Westmoreland</option>
+                      <option>St. James</option>
+                      <option>St. Elizabeth</option>
+                      <option>Trelawny</option>
+                      <option>St. Catherine</option>
+                      <option>St. Mary</option>
+                      <option>Manchester</option>
+                      <option>Clarendon</option>
+                      <option>St. Ann</option>
+                      <option>St. Thomas</option>
+                      <option>Portland</option>
+                      <option>St. Andrew</option>
+                      <option>Kingston</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="col-sm-2 control-label">Phone Number</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="tel_number" name="tel_number" placeholder="Phone Number">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="license" class="col-sm-2 control-label">License Number</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="driver_id" name="driver_id" placeholder="License Number">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="hidden" name="csrf_token" id="csrf_token" value="{{ form.csrf_token() }}"/>
+                </div>
+                <button type="submit">Submit</button>
+              </form>
+          </div>
+        </div>
+      </div>
+
+      <section  class = "clr" data-speed = "6" data-type = "background">
+        <br><br>
+        <div class ="container">
+          <div class = "container text-center">
+            <a class="login" href="/contact/">Contact Us</a>
+            <a class ="login signup" href="/about/">About Us</a>
+            <br><br>
+          </div>
+        </div>
+      </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

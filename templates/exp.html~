@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OneStopPlus+</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic,400' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="media/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="media/exp.css">
+    <!-- <link rel="stylesheet" href="css/creative.css" type="text/css"> -->
+    <script src="media/test.js"></script>
+    
+  </head>
+
+  <body>
+
+    <section id = "home" data-speed = "6" data-type = "background">
+      <!-- header -->
+      <header class="header">
+        <div class = "container">
+          <div class="page-header">
+            <h2 class = "main-head">OneStopPlus<div class = "plus"><b>+</b></div> <small>Ultimate travel experience</small></h2>
+            <div class="additional pull-right">
+              <div class="pull-left">
+                <ul>
+                  <li class = "login"><a href="#modalLogin" data-toggle="modal" data-target="#modalLogin">Sign In</a></li>
+                  <li class = "login signup"><a href="#signup" data-toggle="modal" data-target="#signupbox">Sign Up</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+            <!-- ************************************Login Modal *******************************************-->
+            <div id="modalLogin" class="modal fade wow bounceIn" style="visibility: visible;">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-4 col-md-offset-4">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <span class="glyphicon glyphicon-lock"></span> Login</div>
+                              <div class="panel-body">
+                                  <form class="form-horizontal" role="form" method="POST" action="/login/">
+                                  <div class="form-group">
+                                      <label for="inputEmail3" class="col-sm-3 control-label">
+                                          Email</label>
+                                      <div class="col-sm-9">
+                                          <input type="email" class="form-control" id="inputEmail3" name="email" placeholder="Email" required>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword3" class="col-sm-3 control-label">
+                                          Password</label>
+                                      <div class="col-sm-9">
+                                          <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password" required>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="col-sm-offset-3 col-sm-9">
+                                          <div class="checkbox">
+                                              <label>
+                                                  <input type="checkbox"/>
+                                                  Remember me
+                                              </label>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="form-group last">
+                                      <div class="col-sm-offset-3 col-sm-9">
+                                          <button type="submit" class="btn btn-success btn-sm">
+                                              Sign in</button>
+                                               <button type="reset" class="btn btn-default btn-sm">
+                                              Reset</button>
+                                      </div>
+                                  </div>
+                                  </form>
+                              </div>
+                              <div class="panel-footer">
+                                  Not Registred? <a href="#">Register here</a>
+                                  <button type="button" style="margin-top:-7px;"class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- ************************************LogIn Modal *******************************************-->
+
+            <!-- ************************************SignUp Modal ******************************************-->
+            <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-4">
+              <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <div class="panel-title">Sign Up</div>
+                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#loginbox').show(); $('#signupbox').show()">Sign Up</a></div>
+                  </div>  
+                  
+                  <div class="panel-body" >
+                    <form id="signupform" class="form-horizontal" role="form" action="/signup/" method="POST">
+                          
+                      <div id="signupalert" style="display:none" class="alert alert-danger">
+                        <p>Error:</p>
+                        <span></span>
+                      </div>
+                            
+                      <div class="form-group">
+                        <label for="email" class="col-md-3 control-label">Email</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="email" placeholder="Email Address">
+                        </div>
+                      </div>
+                          
+                      <div class="form-group">
+                        <label for="firstname" class="col-md-3 control-label">First Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="first_name" placeholder="First Name">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+                        </div>
+                      </div>
+
+	              <div class="form-group">
+                          <label for="tel_number" class="col-md-3 control-label">Contact Number</label>
+                          <div class="col-md-9">
+                              <input type="text" class="form-control" name="tel_number" placeholder="Contact Number">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="password" class="col-md-3 control-label">Password</label>
+                        <div class="col-md-9">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+                        </div>
+                      </div>
+
+		      <div class="form-group">
+			  <label for="password_confirmation" class="col-md-3 control-label">Password Confirmation</label>
+			  <div class="col-md-9">
+			      <input type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation">
+			  </div>
+		      </div>
+
+                      <div class="form-group">
+                        <!-- Button -->                                        
+                        <div class="col-md-offset-3 col-md-9">
+                          <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                        </div>
+                      </div>
+                      
+                      <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group"></div>                                      
+                    </form>
+                  </div>
+                </div>    
+            </div> 
+             <!-- ***********************************SignUp Modal *****************************************-->
+
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- header -->
+    
+        <!-- Navbar -->
+           <div class = "navbar navbar-default navbar-fixed-top">
+              <div class = "container">
+                <div class = "navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a href="#home" class="navbar-brand page-scroll">OneStopPlus<div class = "plus"><b>+</b></div></a>
+                </div>
+    
+                <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a class="page-scroll" href="#home">Home</a></li>
+                    <li><a class="page-scroll" href="#features">Features</a></li>
+                    <li><a class="page-scroll" href="#options">Options</a></li>
+                    <li><a class="page-scroll" href="#contact">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+           </div>
+        <!-- Navabar -->
+    
+        <!-- Carousel -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+              </ol>
+    
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img src="media/images/backgrounds/img.jpg" alt="First slide">
+                </div>
+    
+                <div class="item">
+                  <img src="media/images/backgrounds/img1.jpg" alt="Second slide">
+                </div>
+    
+                <div class="item">
+                  <img src="media/images/backgrounds/img.jpg" alt="Third slide">
+                </div>
+              </div>
+        </div>
+        <!-- Carousel -->    
+    </section>
+   <section id="options" style="background:black;">
+      <br>
+      <div class="text-center">
+        <p class = "label inverted">Options</p>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="board">
+                <div class="board-inner">
+                    <ul class="nav nav-tabs" id="myTab">
+                      <div class="liner"></div>
+
+                        <li class="active arrowless">
+                          <a href="#home" data-toggle="tab" title="welcome">
+                            <span class="round-tabs one">
+                              <i class="fa fa-taxi"></i>
+                            </span> 
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#profile" data-toggle="tab" title="profile">
+                           <span class="round-tabs two">
+                              <i class="fa fa-car"></i>
+                           </span> 
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#messages" data-toggle="tab" title="bootsnipp goodies">
+                            <span class="round-tabs three">
+                              <i class="ionicons ion-android-car large-icons"></i>
+                            </span> 
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#settings" data-toggle="tab" title="blah blah">
+                            <span class="round-tabs four">
+                              <i class="ionicons ion-model-s large-icons"></i>
+                            </span> 
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#doner" data-toggle="tab" title="completed">
+                            <span class="round-tabs five">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span> 
+                          </a>
+                        </li>                               
+                    </ul>
+                  </div>
+
+                  <div class="tab-content">
+
+                    <div class="tab-pane fade in active" id="home">
+                      <h3 class="head text-center">
+                        Welcome to Bootsnipp<sup>™</sup> 
+                        <span style="color:#f48260;">♥</span>
+                      </h3>
+
+                      <img class="img-responsive in-board" src="img/slide1.png">
+
+                      <p class="narrow text-center">                        
+                      </p>
+                                    
+                      <p class="text-center">
+                        <a href="" class="btn btn-success btn-outline-rounded green"> 
+                          start using bootsnipp 
+                          <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                        </a>
+                      </p>
+                    </div>
+
+                    <div class="tab-pane fade" id="profile">
+                      <h3 class="head text-center">
+                        Create a Bootsnipp<sup>™</sup> Profile
+                      </h3>
+                      <p class="narrow text-center">                       
+                      </p>
+
+                      <img class="img-responsive in-board" src="img/slide2.png">
+                      <p class="text-center">
+                        <a href="" class="btn btn-success btn-outline-rounded green"> 
+                          create your profile 
+                          <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                        </a>
+                      </p>
+                    </div>
+
+                    <div class="tab-pane fade" id="messages">
+                      <h3 class="head text-center">
+                        Bootsnipp goodies
+                      </h3>
+                      <p class="narrow text-center">                       
+                      </p>
+
+                      <img class="img-responsive in-board" src="img/slide3.png">
+                      <p class="text-center">
+                        <a href="" class="btn btn-success btn-outline-rounded green"> 
+                          start using bootsnipp 
+                          <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                        </a>
+                      </p>
+                    </div>
+
+                    <div class="tab-pane fade" id="settings">
+                      <h3 class="head text-center">
+                        Drop comments!
+                      </h3>
+                      <p class="narrow text-center">                        
+                      </p>
+
+                      <img class="img-responsive in-board" src="img/slide4.png">
+                      <p class="text-center">
+                        <a href="" class="btn btn-success btn-outline-rounded green"> 
+                          start using bootsnipp 
+                          <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                        </a>
+                      </p>
+                    </div>
+
+                    <div class="tab-pane fade" id="doner">
+                      <div class="text-center">
+                        <i class="img-intro icon-checkmark-circle"></i>
+                      </div>
+                      <h3 class="head text-center">
+                        thanks for staying tuned! 
+                        <span style="color:#f48260;">♥</span> 
+                        Bootstrap
+                      </h3>
+                      <p class="narrow text-center">
+                        Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                      </p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </section>
+                      
+                       
+    <!-- *********************************Options **************************************************-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="media/jquery.easing.min.js"></script>
+    <script src="media/jquery.fittext.js"></script>
+    <script src="media/wow.min.js"></script>
+    <script src="media/creative.js"></script>
+  </body>
+</html>

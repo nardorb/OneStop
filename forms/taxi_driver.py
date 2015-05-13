@@ -1,5 +1,6 @@
+import webapp2_extras
 import wtforms
-from wtforms import validators
+from wtforms import validators, ValidationError
 
 
 class TaxiDriverForm(wtforms.Form):
@@ -34,7 +35,7 @@ class TaxiDriverForm(wtforms.Form):
       validators.Required(),
       validators.Length(min=3)])
 
-    #later converted to date field
+    #To be converted to date field
     dob = wtforms.StringField(validators=[
       validators.Required()])
 
@@ -46,6 +47,11 @@ class TaxiDriverForm(wtforms.Form):
 
     password_confirmation = wtforms.PasswordField()
 
+
+    def validate_email(self, field):
+      UserModel = webapp2_extras.auth.get_auth().store.user_model
+      if UserModel.get_by_auth_id(field.data):
+        raise ValidationError('That e-mail is aready in use!')
 
     def validate_driver_id(self, field):
       field.data = field.data.strip()

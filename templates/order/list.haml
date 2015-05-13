@@ -18,6 +18,7 @@
       %th Passengers
       %th Comments
       %th Profile
+      %th Price
       %th
     %tbody
       -for order in current_account.get_Orders()
@@ -27,6 +28,7 @@
           %td #{order.passengers}
           %td #{order.comments}
           %td #{order.profile.name}
+          %td #{order.cost}
           %td
             %a.btn.btn-danger(href="#{uri_for('order.delete', id=order.key().id())}")
               %i.icon-trash

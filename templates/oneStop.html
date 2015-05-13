@@ -6,165 +6,297 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/media/oneStop.css">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-    <script src="/media/oneStop.js"></script>
+
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic,400' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="media/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="media/test.css">
+    <!-- <link rel="stylesheet" href="css/creative.css" type="text/css"> -->
+    <script src="media/test.js"></script>
 
   </head>
 
   <body>
-    <section id = "section1" data-speed = "6" data-type = "background">
-        <!-- header -->
-        <header class="header">
-          <div class = "container">
-            <div class="page-header">
-              <h1>OneStopPlus<div class = "plus"><b>+</b></div> <small>Ultimate travel experience</small></h1>
-              <div class="additional pull-right">
-                        <div class="pull-left">
-                            <ul>
-                                <li class = "login"><a href="#modalLogin" data-toggle="modal" data-target="#modalLogin">Sign In</a></li>
-                                <li class = "login signup"><a href="#signupbox" data-toggle="modal" data-target="#signupbox" onclick="$('#signupbox').show()">Sign Up</a></li>
-                                <li class = "login signup"><a href="/driver_signup/">Sign Up to be a Driver</a></li>
-                            </ul>
-                        </div>
-                    </div>
+
+    <!-- **********************************Home ****************************************************-->
+    <section id = "home" data-speed = "6" data-type = "background">
+      <!-- header -->
+      <header class="header">
+        <div class = "container">
+          <div class="page-header">
+            <h2 class = "main-head">OneStopPlus<div class = "plus"><b>+</b></div> <small>Ultimate travel experience</small></h2>
+            <div class="additional pull-right">
+              <div class="pull-left">
+                <ul class="logs">
+                  <li class = "login"><a href="#modalLogin" data-toggle="modal" data-target="#modalLogin">Sign In</a></li>
+                  <li class = "login signup"><a href="#signup" data-toggle="modal" data-target="#signupbox">Sign Up</a></li>
+                  <li class = "login signup"><a href="#driversignup" data-toggle="modal" data-target="#driversignupbox">Sign Up as a driver</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+            <!-- ************************************Login Modal *******************************************-->
+            <div id="modalLogin" class="modal fade wow bounceIn" style="visibility: visible;">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-4 col-md-offset-4">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <span class="glyphicon glyphicon-lock"></span> Login</div>
+                              <div class="panel-body">
+                                  <form class="form-horizontal" role="form" action="/login/" method="POST">
+                                  <div class="form-group">
+                                      <label for="inputEmail3" class="col-sm-3 control-label">
+                                          Email</label>
+                                      <div class="col-sm-9">
+                                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" required>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword3" class="col-sm-3 control-label">
+                                          Password</label>
+                                      <div class="col-sm-9">
+                                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password" required>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="col-sm-offset-3 col-sm-9">
+                                          <div class="checkbox">
+                                              <label>
+                                                  <input type="checkbox"/>
+                                                  Remember me
+                                              </label>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="form-group last">
+                                      <div class="col-sm-offset-3 col-sm-9">
+                                          <button type="submit" class="btn btn-success btn-sm">
+                                              Sign in</button>
+                                               <button type="reset" class="btn btn-default btn-sm">
+                                              Reset</button>
+                                      </div>
+                                  </div>
+                                  </form>
+                              </div>
+                              <div class="panel-footer">
+                                  Not Registred? <a href="#signupbox">Register here</a>
+                                  <button type="button" style="margin-top:-7px;"class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </div>
 
-            <!-- Login Modal -->
-            <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-content">
-                    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-4 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                          <div class="panel panel-info" >
-                                  <div class="panel-heading">
-                                      <div class="panel-title">Sign In</div>
-                                      <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
-                                  </div>
+            <!-- ************************************LogIn Modal *******************************************-->
 
-                                  <div style="padding-top:30px" class="panel-body" >
+            <!-- ************************************SignUp Modal ******************************************-->
+            <div id="signupbox" class="modal fade wow bounceIn" style="visibility: visible;">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-4 col-md-offset-4">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <span class="glyphicon glyphicon-lock"></span> Sign Up</div>
+                              <div class="panel-body">
+                                  <form class="form-horizontal" role="form" action="/signup/" method="POST">
 
-                                      <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-
-                                      <form id="loginform" class="form-horizontal" role="form" method="POST" action="/login/">
-
-                                          <div style="margin-bottom: 25px" class="input-group">
-                                                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                      <input id="login-username" type="text" class="form-control" name="email" value="" placeholder="email address">
-                                                  </div>
-
-                                          <div style="margin-bottom: 25px" class="input-group">
-                                                      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                      <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-                                                  </div>
-
-
-
-                                          <div class="input-group">
-                                                    <div class="checkbox">
-                                                      <label>
-                                                        <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                                                      </label>
-                                                    </div>
-                                                  </div>
-
-
-                                              <div style="margin-top:10px" class="form-group">
-                                                  <!-- Button -->
-
-                                                  <div class="col-sm-12 controls">
-                                                    <button class="btn btn-success" type="submit">Login</button>
-                                                  </div>
-                                              </div>
-
-
-                                              <div class="form-group">
-                                                  <div class="col-md-12 control">
-                                                      <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                                          Don't have an account!
-                                                      <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                                          Sign Up Here
-                                                      </a>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </form>
-
-
-
+                                  <div class="form-group">
+                                      <label for="inputEmail3" class="col-sm-3 control-label">
+                                          First Name</label>
+                                      <div class="col-sm-9">
+                                          <input type="text" class="form-control" id="fname" placeholder="First Name" name="first_name" required>
                                       </div>
                                   </div>
+
+                                  <div class="form-group">
+                                      <label for="inputEmail3" class="col-sm-3 control-label">
+                                          Last Name</label>
+                                      <div class="col-sm-9">
+                                          <input type="text" class="form-control" id="lname" placeholder="Last Name" name="last_name" required>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="inputEmail3" class="col-sm-3 control-label">
+                                          Email</label>
+                                      <div class="col-sm-9">
+                                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" required>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="tel_number" class="col-sm-3 control-label">
+                                          Tel. Number</label>
+                                      <div class="col-sm-9">
+                                          <input type="tel" class="form-control" id="tel_number" placeholder="Tel. Number" name="tel_number" required>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="inputPassword3" class="col-sm-3 control-label">
+                                          Password</label>
+                                      <div class="col-sm-9">
+                                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password" required>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="inputPassword3" class="col-sm-3 control-label">
+                                          Password Confirmation</label>
+                                      <div class="col-sm-9">
+                                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password Confirmation" name="password_confirmation" required>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group last">
+                                      <div class="col-sm-offset-3 col-sm-9">
+                                          <button type="submit" class="btn btn-success btn-sm">
+                                              Sign Up</button>
+                                      </div>
+                                  </div>
+                                  </form>
+                              </div>
+                              <div class="panel-footer">
+                                  Getting started is easy. Let's go!
+                                  <button type="button" style="margin-top:-7px;"class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div>
+                          </div>
                       </div>
-                      <!-- LogIn Modal -->
+                  </div>
+              </div>
+            </div>
+             <!-- ***********************************SignUp Modal *****************************************-->
 
-                      <!-- SignUp Modal -->
-                      <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                                  <div class="panel panel-info">
-                                      <div class="panel-heading">
-                                          <div class="panel-title">Sign Up</div>
-                                          <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Login</a></div>
+             <!-- ************************************DriverSignUp Modal ******************************************-->
+            <div id="driversignupbox" class="modal fade wow bounceIn" style="visibility: visible;">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-4 col-md-offset-4">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <span class="glyphicon glyphicon-lock"></span> Sign Up</div>
+                              <div class="panel-body">
+                                  <form class="form-horizontal" action="/driver_signup/" method="POST">
+                                    <div class="form-group">
+                                      <label for="First Name" class="col-sm-2 control-label">First Name</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
                                       </div>
-                                      <div class="panel-body" >
-                                          <form id="signupform" class="form-horizontal" role="form" action="/signup/" method="POST">
+                                    </div>
 
-                                              <div id="signupalert" style="display:none" class="alert alert-danger">
-                                                  <p>Error:</p>
-                                                  <span></span>
-                                              </div>
+                                    <div class="form-group">
+                                      <label for="Last Name" class="col-sm-2 control-label">Last Name</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+                                      </div>
+                                    </div>
 
+                                    <div class="form-group">
+                                      <label for="email" class="col-sm-2 control-label">Email</label>
+                                      <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                      </div>
+                                    </div>
 
+                                    <div class="form-group">
+                                      <label for="password" class="col-sm-2 control-label">Password</label>
+                                      <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                      </div>
+                                    </div>
 
-                                              <div class="form-group">
-                                                  <label for="email" class="col-md-3 control-label">Email</label>
-                                                  <div class="col-md-9">
-                                                      <input type="text" class="form-control" name="email" placeholder="Email Address">
-                                                  </div>
-                                              </div>
+                                    <div class="form-group">
+                                      <label for="confirmpassword" class="col-sm-2 control-label">Password Confirmation</label>
+                                      <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password Confirmation">
+                                      </div>
+                                    </div>
 
-                                              <div class="form-group">
-                                                  <label for="first_name" class="col-md-3 control-label">First Name</label>
-                                                  <div class="col-md-9">
-                                                      <input type="text" class="form-control" name="first_name" placeholder="First Name">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="last_name" class="col-md-3 control-label">Last Name</label>
-                                                  <div class="col-md-9">
-                                                      <input type="text" class="form-control" name="last_name" placeholder="Last Name">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="tel_number" class="col-md-3 control-label">Contact Number</label>
-                                                  <div class="col-md-9">
-                                                      <input type="text" class="form-control" name="tel_number" placeholder="Contact Number">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="password" class="col-md-3 control-label">Password</label>
-                                                  <div class="col-md-9">
-                                                      <input type="password" class="form-control" name="password" placeholder="Password">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="password_confirmation" class="col-md-3 control-label">Password</label>
-                                                  <div class="col-md-9">
-                                                      <input type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation">
-                                                  </div>
-                                              </div>
+                                    <div class="form-group">
+                                      <label for="sex" class="col-sm-2 control-label">Sex</label>
+                                      <div class="col-sm-10">
+                                        <input type="sex" class="form-control" id="sex" name="sex" placeholder="Sex">
+                                      </div>
+                                    </div>
 
-                                              <div class="form-group">
-                                                  <!-- Button -->
-                                                  <div class="col-md-offset-3 col-md-9">
-                                                      <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
-                                                  </div>
-                                              </div>
+                                    <div class="form-group">
+                                      <label for="Date of Birth" class="col-sm-2 control-label">Date of Birth</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="dob" name="dob" placeholder="Date of Birth">
+                                      </div>
+                                    </div>
 
-                                              <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+                                    <div class="form-group">
+                                      <label for="address" class="col-sm-2 control-label">Address</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+                                      </div>
+                                    </div>
 
-                                              </div>
-                                          </form>
-                                       </div>
-                                  </div>
-                       </div>
-                       <!-- SignUp Modal -->
+                                     <div class="form-group">
+                                      <label for="parish" class="col-sm-2 control-label">Parish</label>
+                                      <div class="col-sm-10">
+                                        <select class="form-control" name="parish">
+                                          <option>Hanover</option>
+                                          <option>Westmoreland</option>
+                                          <option>St. James</option>
+                                          <option>St. Elizabeth</option>
+                                          <option>Trelawny</option>
+                                          <option>St. Catherine</option>
+                                          <option>St. Mary</option>
+                                          <option>Manchester</option>
+                                          <option>Clarendon</option>
+                                          <option>St. Ann</option>
+                                          <option>St. Thomas</option>
+                                          <option>Portland</option>
+                                          <option>St. Andrew</option>
+                                          <option>Kingston</option>
+                                        </select>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="phone" class="col-sm-2 control-label">Phone Number</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="tel_number" name="tel_number" placeholder="Phone Number">
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="license" class="col-sm-2 control-label">License Number</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="driver_id" name="driver_id" placeholder="License Number">
+                                      </div>
+                                    </div><!--
+                                    <div class="form-group">
+                                      <input type="hidden" name="csrf_token" id="csrf_token" value="{{ form.csrf_token() }}"/>
+                                    </div> -->
+                                    <button type="submit">Submit</button>
+                                  </form>
+                              </div>
+                              <div class="panel-footer">
+                                  Getting started is easy. Let's go!
+                                  <button type="button" style="margin-top:-7px;"class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+             <!-- ***********************************DriverSignUp Modal *****************************************-->
+
                 </div>
                 </div>
               </div>
@@ -182,15 +314,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a href="#" class="navbar-brand shimmer">OneStopPlus<div class = "plus shimmer"><b>+</b></div></a>
+                  <a href="#home" class="navbar-brand page-scroll">OneStopPlus<div class = "plus"><b>+</b></div></a>
                 </div>
 
                 <div class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact/">Contact Us</a></li>
+                    <li><a class="page-scroll" href="#home">Home</a></li>
+                    <li><a class="page-scroll" href="#features">Features</a></li>
+                    <li><a class="page-scroll" href="#options">Options</a></li>
+                    <li><a class="page-scroll" href="#contact">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
@@ -202,18 +334,18 @@
 
               <!-- Indicators -->
               <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="0" class="active only"></li>
                 <li data-target="#myCarousel" data-slide-to="1" class=""></li>
                 <li data-target="#myCarousel" data-slide-to="2" class=""></li>
               </ol>
 
               <div class="carousel-inner" role="listbox">
-                <div class="item active">
+                <div class="item active only">
                   <img src="media/images/backgrounds/img.jpg" alt="First slide">
                 </div>
 
                 <div class="item">
-                  <img src="media/images/backgrounds/img.jpg" alt="Second slide">
+                  <img src="media/images/backgrounds/img1.jpg" alt="Second slide">
                 </div>
 
                 <div class="item">
@@ -223,11 +355,11 @@
         </div>
         <!-- Carousel -->
     </section>
+    <!-- **********************************Home ****************************************************-->
 
 
-
-    <!-- Features -->
-    <section class = "section2" data-speed = "4" data-type = "background">
+    <!-- *********************************Features *************************************************-->
+    <section class="bckgrd" id = "features" data-speed = "4" data-type = "background">
       <br><br>
         <article>
           <div class = "container">
@@ -235,7 +367,7 @@
               <div class="col-xs-12 text-center">
                 <p class = "label">Features</p>
                 <h3>OneStopPlus<div class = "plus"><b>+</b></div></h3>
-                <p>Order cab, arrive on time, travel in comfort</p>
+                <p id = "words">Order cab, arrive on time, travel in comfort</p>
               </div>
             </div>
           </div>
@@ -243,39 +375,39 @@
           <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-sm-4 col-xs-6">
-                    <a href="#" class="thumbnail bounce">
+                    <a href="#" class="thumbnail bounce wow bounceIn" style="visibility: visible;">
                       <div></div>
-                      <img src="media/images/thumb/thumb.jpg" class="img-responsive">
+                      <img class="uniform" src="/media/images/thumb/thumb9.jpg" class="img-responsive">
                     </a>
                 </div>
 
                  <div class="col-lg-4 col-sm-4 col-xs-6">
-                    <a href="#" class="thumbnail bounce">
-                         <img src="media/images/thumb/thumb.jpg" class="img-responsive">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.1s;">
+                         <img src="/media/images/thumb/thumb3.jpg" class="img-responsive">
                     </a>
                 </div>
 
                 <div class="col-lg-4 col-sm-4 col-xs-6">
-                    <a href="#" class="thumbnail bounce">
-                         <img src="media/images/thumb/thumb.jpg" class="img-responsive">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.2s;">
+                         <img src="/media/images/thumb/thumb4.jpg" class="img-responsive">
                     </a>
                 </div>
 
                 <div class="col-lg-4 col-sm-4 col-xs-6">
-                    <a href="#" class="thumbnail bounce">
-                         <img src="media/images/thumb/thumb.jpg" class="img-responsive">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.3s;">
+                         <img src="/media/images/thumb/thumb5.jpg" class="img-responsive">
                     </a>
                 </div>
 
                  <div class="col-lg-4 col-sm-4 col-xs-6">
-                    <a href="#" class="thumbnail bounce">
-                         <img src="media/images/thumb/thumb.jpg" class="img-responsive">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+                         <img src="/media/images/thumb/thumb10.jpg" class="img-responsive">
                     </a>
                 </div>
 
                 <div class="col-lg-4 col-sm-4 col-xs-6">
-                    <a href="#" class="thumbnail bounce">
-                         <img src="media/images/thumb/thumb.jpg" class="img-responsive">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                         <img src="/media/images/thumb/thumb7.jpg" class="img-responsive">
                     </a>
                 </div>
             </div>
@@ -283,35 +415,169 @@
           <br><br><br><br><br><br>
         </article>
     </section>
-    <!-- Features -->
+    <!-- *********************************Features *************************************************-->
 
-    <section id = "section3" class = "end" data-speed = "6" data-type = "background">
-      <div class ="container">
-        <br><br><br><br><br><br>
-        <!-- Font Awesome Icons -->
-        <div class="container text-center">
+    <!-- *********************************Options **************************************************-->
+
+    <section id="options" style="background:black;">
+      <br>
+      <div class="text-center">
+        <p class = "label inverted">Options</p>
+      </div>
+      <div class="container">
           <div class="row">
-            <div class = "col-md-12">
-              <div class = "well">
-                <a class = "dec" href="#"><i class="largeicon fa fa-facebook"></i></a>
-                <a class = "dec" href="#"><i class="largeicon fa fa-twitter"></i></a>
-                <a class = "dec" href="#"><i class="largeicon fa fa-instagram"></i></a>
-                <a class = "dec" href="#"><i class="largeicon fa fa-linkedin"></i></a>
-                <a class = "dec" href="#"><i class="largeicon fa fa-google-plus"></i></a>
-              </div>
-            </div>
+              <div class="board">
+                <div class="board-inner">
+                    <ul class="nav nav-tabs" id="myTab">
+                      <div class="liner"></div>
+
+                        <li class="active arrowless">
+                          <a href="#home" data-toggle="tab" title="WELCOME">
+                            <span class="round-tabs one">
+                              <i class="glyphicon glyphicon-map-marker"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#taxi" data-toggle="tab" title="TAXI">
+                           <span class="round-tabs two">
+                              <i class="fa fa-taxi"></i>
+                           </span>
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#corporate" data-toggle="tab" title="CORPORATE">
+                            <span class="round-tabs three">
+                              <i class="fa fa-car"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#suv" data-toggle="tab" title="SUV">
+                            <span class="round-tabs four">
+                              <i class="ionicons ion-android-car large-icons"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#lux" data-toggle="tab" title="LUXURY">
+                            <span class="round-tabs five">
+                                <i class="ionicons ion-model-s large-icons"></i>
+                            </span>
+                          </a>
+                        </li>
+                    </ul>
+                  </div>
+
+                  <div class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
+                      <h2 class="head text-center">
+                        <div class="well"><h2>Welcome to OneStopPlus<div class="plus wow bounceIn"><b>+</b></div></h2></div>
+                      </h2>
+                      <p class="narrow text-center">
+                        We take you in style from your location to your destination with reliable pick up times and quicker service.
+                        <br>Get picked up today!
+                      </p>
+                      <p class="text-center">
+                        <a href="" class="btn btn-success btn-outline-rounded green">
+                          Join OneStopPlus+
+                        </a>
+                      </p>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="taxi">
+                      <h2 class="head text-center">
+                        Plus<div class="plus"><b>+</b></div> Taxi
+                      </h2>
+                      <p class="narrow text-center" style="diplay:blockS;">
+                        For everyday use, choose from our selection of company or freelance drivers to get you around town.
+                      </p>
+
+                      <div class="center-block"><img class="img-responsive in-board" src="/media/images/backgrounds/slide1.png"></div>
+                    </div>
+
+                    <div class="tab-pane fade" id="corporate">
+                      <h2 class="head text-center">
+                        Plus<div class="plus"><b>+</b></div> Corporate
+                      </h2>
+                      <p class="narrow text-center">
+                        For business purposes or anyone who wants to arrive in style.
+                        <br>We've got you covered.
+                      </p>
+
+                      <img class="img-responsive in-board" src="/media/images/backgrounds/slide2.png">
+                    </div>
+
+                    <div class="tab-pane fade" id="suv">
+                      <h2 class="head text-center">
+                        Plus<div class="plus"><b>+</b></div> SUV
+                      </h2>
+                      <p class="narrow text-center">
+                        Traveling in a group? No worries. Indulge in our SUV's
+                      </p>
+
+                      <img class="img-responsive in-board" src="/media/images/backgrounds/slide3.png">
+                    </div>
+
+                    <div class="tab-pane fade" id="lux">
+                      <h2 class="head text-center">
+                        Plus<div class="plus"><b>+</b></div> Luxury
+                      </h2>
+                      <p class="narrow text-center">
+                        Spacious cars, premium service.
+                      </p>
+
+                      <img class="img-responsive in-board" src="/media/images/backgrounds/slide4.png">
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
           </div>
         </div>
-        <br><br><br><br>
       </div>
     </section>
 
+    <!-- *********************************Options **************************************************-->
 
+    <!-- *********************************End of page ribbon ***************************************-->
 
+      <section id = "contact" class = "clr" data-speed = "6" data-type = "background">
+        <div class ="container">
+          <br><br><br>
+          <!-- Font Awesome Icons -->
+          <div class="container text-center">
+            <div class="row">
+              <div class = "col-md-12">
+                <div class = "well">
+                  <a class = "dec" href="#"><i class="largeicon fa fa-facebook wow bounceIn text-primary" style="visibility: visible;"></i></a>
+                  <a class = "dec" href="#"><i class="largeicon fa fa-twitter  wow bounceIn text-primary" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.1s;"></i></a>
+                  <a class = "dec" href="#"><i class="largeicon fa fa-instagram wow bounceIn text-primary" data-wow-delay=".2s" style="visibility: visible; -webkit-animation-delay: 0.2s;"></i></a>
+                  <a class = "dec" href="#"><i class="largeicon fa fa-linkedin wow bounceIn text-primary" data-wow-delay=".2s" style="visibility: visible; -webkit-animation-delay: 0.3s;"></i></a>
+                  <a class = "dec" href="#"><i class="largeicon fa fa-google-plus wow bounceIn text-primary" data-wow-delay=".2s" style="visibility: visible; -webkit-animation-delay: 0.4s;"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class = "container text-center">
+            <a class="login" href="/contact/">Contact Us</a>
+            <a class ="signup" href="/about/">About Us</a>
+            <br><br>
+          </div>
+        </div>
+      </section>
 
-<!--     <div id="map-canvas"></div>
- -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- **********************************End of page ribbon  *************************************-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="media/jquery.easing.min.js"></script>
+    <script src="media/jquery.fittext.js"></script>
+    <script src="media/wow.min.js"></script>
+    <script src="media/creative.js"></script>
   </body>
 </html>

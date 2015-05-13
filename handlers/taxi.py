@@ -52,6 +52,8 @@ class TaxiHandler(base.BaseHandler):
 
     return self.redirect_to('taxi.list')
 
+
+  @role_required(is_admin=True)
   def list(self):
     # We pass form so we can generate it with the modal using macros.
     return self.render_to_response('taxi/list.haml', {'form': TaxiForm()})

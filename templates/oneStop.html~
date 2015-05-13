@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OneStopPlus+</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic,400' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="media/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="media/test.css">
+    <!-- <link rel="stylesheet" href="css/creative.css" type="text/css"> -->
+    <script src="media/test.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- **********************************Home ****************************************************-->
+    <section id = "home" data-speed = "6" data-type = "background">
+      <!-- header -->
+      <header class="header">
+        <div class = "container">
+          <div class="page-header">
+            <h2 class = "main-head">OneStopPlus<div class = "plus"><b>+</b></div> <small>Ultimate travel experience</small></h2>
+            <div class="additional pull-right">
+              <div class="pull-left">
+                <ul class="logs">
+                  <li class = "login"><a href="#modalLogin" data-toggle="modal" data-target="#modalLogin">Sign In</a></li>
+                  <li class = "login signup"><a href="#signup" data-toggle="modal" data-target="#signupbox">Sign Up</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+            <!-- ************************************Login Modal *******************************************-->
+            <div id="modalLogin" class="modal fade wow bounceIn" style="visibility: visible;">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-4 col-md-offset-4">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <span class="glyphicon glyphicon-lock"></span> Login</div>
+                              <div class="panel-body">
+                                  <form class="form-horizontal" role="form" action="/login/" method="POST">
+                                  <div class="form-group">
+                                      <label for="inputEmail3" class="col-sm-3 control-label">
+                                          Email</label>
+                                      <div class="col-sm-9">
+                                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" required>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword3" class="col-sm-3 control-label">
+                                          Password</label>
+                                      <div class="col-sm-9">
+                                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password" required>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <div class="col-sm-offset-3 col-sm-9">
+                                          <div class="checkbox">
+                                              <label>
+                                                  <input type="checkbox"/>
+                                                  Remember me
+                                              </label>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="form-group last">
+                                      <div class="col-sm-offset-3 col-sm-9">
+                                          <button type="submit" class="btn btn-success btn-sm">
+                                              Sign in</button>
+                                               <button type="reset" class="btn btn-default btn-sm">
+                                              Reset</button>
+                                      </div>
+                                  </div>
+                                  </form>
+                              </div>
+                              <div class="panel-footer">
+                                  Not Registred? <a href="#signupbox">Register here</a>
+                                  <button type="button" style="margin-top:-7px;"class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- ************************************LogIn Modal *******************************************-->
+
+            <!-- ************************************SignUp Modal ******************************************-->
+            <div id="signupbox" class="modal fade wow bounceIn" style="visibility: visible;">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-4 col-md-offset-4">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <span class="glyphicon glyphicon-lock"></span> Sign Up</div>
+                              <div class="panel-body">
+                                  <form class="form-horizontal" role="form" action="/signup/" method="POST">
+
+                                  <div class="form-group">
+                                      <label for="inputEmail3" class="col-sm-3 control-label">
+                                          First Name</label>
+                                      <div class="col-sm-9">
+                                          <input type="text" class="form-control" id="fname" placeholder="First Name" name="first_name" required>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="inputEmail3" class="col-sm-3 control-label">
+                                          Last Name</label>
+                                      <div class="col-sm-9">
+                                          <input type="text" class="form-control" id="lname" placeholder="Last Name" name="last_name" required>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="inputEmail3" class="col-sm-3 control-label">
+                                          Email</label>
+                                      <div class="col-sm-9">
+                                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" required>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword3" class="col-sm-3 control-label">
+                                          Password</label>
+                                      <div class="col-sm-9">
+                                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password" required>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="inputPassword3" class="col-sm-3 control-label">
+                                          Password Confirmation</label>
+                                      <div class="col-sm-9">
+                                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password Confirmation" name="password_confirmation" required>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group last">
+                                      <div class="col-sm-offset-3 col-sm-9">
+                                          <button type="submit" class="btn btn-success btn-sm">
+                                              Sign Up</button>
+                                      </div>
+                                  </div>
+                                  </form>
+                              </div>
+                              <div class="panel-footer">
+                                  Getting started is easy. Let's go!
+                                  <button type="button" style="margin-top:-7px;"class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+             <!-- ***********************************SignUp Modal *****************************************-->
+
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- header -->
+
+        <!-- Navbar -->
+           <div class = "navbar navbar-default navbar-fixed-top">
+              <div class = "container">
+                <div class = "navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a href="#home" class="navbar-brand page-scroll">OneStopPlus<div class = "plus"><b>+</b></div></a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a class="page-scroll" href="#home">Home</a></li>
+                    <li><a class="page-scroll" href="#features">Features</a></li>
+                    <li><a class="page-scroll" href="#options">Options</a></li>
+                    <li><a class="page-scroll" href="#contact">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+           </div>
+        <!-- Navabar -->
+
+        <!-- Carousel -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active only"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+              </ol>
+
+              <div class="carousel-inner" role="listbox">
+                <div class="item active only">
+                  <img src="media/images/backgrounds/img.jpg" alt="First slide">
+                </div>
+
+                <div class="item">
+                  <img src="media/images/backgrounds/img1.jpg" alt="Second slide">
+                </div>
+
+                <div class="item">
+                  <img src="media/images/backgrounds/img.jpg" alt="Third slide">
+                </div>
+              </div>
+        </div>
+        <!-- Carousel -->
+    </section>
+    <!-- **********************************Home ****************************************************-->
+
+
+    <!-- *********************************Features *************************************************-->
+    <section class="bckgrd" id = "features" data-speed = "4" data-type = "background">
+      <br><br>
+        <article>
+          <div class = "container">
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <p class = "label">Features</p>
+                <h3>OneStopPlus<div class = "plus"><b>+</b></div></h3>
+                <p id = "words">Order cab, arrive on time, travel in comfort</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <a href="#" class="thumbnail bounce wow bounceIn" style="visibility: visible;">
+                      <div></div>
+                      <img class="uniform" src="/media/images/thumbs/thumb9.jpg" class="img-responsive">
+                    </a>
+                </div>
+
+                 <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.1s;">
+                         <img src="/media/images/thumbs/thumb3.jpg" class="img-responsive">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.2s;">
+                         <img src="/media/images/thumbs/thumb4.jpg" class="img-responsive">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.3s;">
+                         <img src="/media/images/thumbs/thumb5.jpg" class="img-responsive">
+                    </a>
+                </div>
+
+                 <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+                         <img src="/media/images/thumbs/thumb6(1).jpg" class="img-responsive">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-sm-4 col-xs-6">
+                    <a href="#" class="thumbnail bounce wow bounceIn" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                         <img src="/media/images/thumbs/thumb7.jpg" class="img-responsive">
+                    </a>
+                </div>
+            </div>
+          </div>
+          <br><br><br><br><br><br>
+        </article>
+    </section>
+    <!-- *********************************Features *************************************************-->
+
+    <!-- *********************************Options **************************************************-->
+
+    <section id="options" style="background:black;">
+      <br>
+      <div class="text-center">
+        <p class = "label inverted">Options</p>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="board">
+                <div class="board-inner">
+                    <ul class="nav nav-tabs" id="myTab">
+                      <div class="liner"></div>
+
+                        <li class="active arrowless">
+                          <a href="#home" data-toggle="tab" title="WELCOME">
+                            <span class="round-tabs one">
+                              <i class="glyphicon glyphicon-map-marker"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#taxi" data-toggle="tab" title="TAXI">
+                           <span class="round-tabs two">
+                              <i class="fa fa-taxi"></i>
+                           </span>
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#corporate" data-toggle="tab" title="CORPORATE">
+                            <span class="round-tabs three">
+                              <i class="fa fa-car"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#suv" data-toggle="tab" title="SUV">
+                            <span class="round-tabs four">
+                              <i class="ionicons ion-android-car large-icons"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li class="arrowless">
+                          <a href="#lux" data-toggle="tab" title="LUXURY">
+                            <span class="round-tabs five">
+                                <i class="ionicons ion-model-s large-icons"></i>
+                            </span>
+                          </a>
+                        </li>
+                    </ul>
+                  </div>
+
+                  <div class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
+                      <h2 class="head text-center">
+                        <div class="well"><h2>Welcome to OneStopPlus<div class="plus wow bounceIn"><b>+</b></div></h2></div>
+                      </h2>
+                      <p class="narrow text-center">
+                        We take you in style from your location to your destination with reliable pick up times and quicker service.
+                        <br>Get picked up today!
+                      </p>
+                      <p class="text-center">
+                        <a href="" class="btn btn-success btn-outline-rounded green">
+                          Join OneStopPlus+
+                        </a>
+                      </p>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="taxi">
+                      <h2 class="head text-center">
+                        Plus<div class="plus"><b>+</b></div> Taxi
+                      </h2>
+                      <p class="narrow text-center" style="diplay:blockS;">
+                        For everyday use, choose from our selection of company or freelance drivers to get you around town.
+                      </p>
+
+                      <div class="center-block"><img class="img-responsive in-board" src="/media/images/backgrounds/slide1.png"></div>
+                    </div>
+
+                    <div class="tab-pane fade" id="corporate">
+                      <h2 class="head text-center">
+                        Plus<div class="plus"><b>+</b></div> Corporate
+                      </h2>
+                      <p class="narrow text-center">
+                        For business purposes or anyone who wants to arrive in style.
+                        <br>We've got you covered.
+                      </p>
+
+                      <img class="img-responsive in-board" src="/media/images/backgrounds/slide2.png">
+                    </div>
+
+                    <div class="tab-pane fade" id="suv">
+                      <h2 class="head text-center">
+                        Plus<div class="plus"><b>+</b></div> SUV
+                      </h2>
+                      <p class="narrow text-center">
+                        Traveling in a group? No worries. Indulge in our SUV's
+                      </p>
+
+                      <img class="img-responsive in-board" src="/media/images/backgrounds/slide3.png">
+                    </div>
+
+                    <div class="tab-pane fade" id="lux">
+                      <h2 class="head text-center">
+                        Plus<div class="plus"><b>+</b></div> Luxury
+                      </h2>
+                      <p class="narrow text-center">
+                        Spacious cars, premium service.
+                      </p>
+
+                      <img class="img-responsive in-board" src="/media/images/backgrounds/slide4.png">
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- *********************************Options **************************************************-->
+
+    <!-- *********************************End of page ribbon ***************************************-->
+
+      <section id = "contact" class = "clr" data-speed = "6" data-type = "background">
+        <div class ="container">
+          <br><br><br>
+          <!-- Font Awesome Icons -->
+          <div class="container text-center">
+            <div class="row">
+              <div class = "col-md-12">
+                <div class = "well">
+                  <a class = "dec" href="#"><i class="largeicon fa fa-facebook wow bounceIn text-primary" style="visibility: visible;"></i></a>
+                  <a class = "dec" href="#"><i class="largeicon fa fa-twitter  wow bounceIn text-primary" data-wow-delay=".1s" style="visibility: visible; -webkit-animation-delay: 0.1s;"></i></a>
+                  <a class = "dec" href="#"><i class="largeicon fa fa-instagram wow bounceIn text-primary" data-wow-delay=".2s" style="visibility: visible; -webkit-animation-delay: 0.2s;"></i></a>
+                  <a class = "dec" href="#"><i class="largeicon fa fa-linkedin wow bounceIn text-primary" data-wow-delay=".2s" style="visibility: visible; -webkit-animation-delay: 0.3s;"></i></a>
+                  <a class = "dec" href="#"><i class="largeicon fa fa-google-plus wow bounceIn text-primary" data-wow-delay=".2s" style="visibility: visible; -webkit-animation-delay: 0.4s;"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class = "container text-center">
+            <a class="login" href="/contact/">Contact Us</a>
+            <a class ="signup" href="/about/">About Us</a>
+            <br><br>
+          </div>
+        </div>
+      </section>
+
+    <!-- **********************************End of page ribbon  *************************************-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="media/jquery.easing.min.js"></script>
+    <script src="media/jquery.fittext.js"></script>
+    <script src="media/wow.min.js"></script>
+    <script src="media/creative.js"></script>
+  </body>
+</html>

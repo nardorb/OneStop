@@ -64,4 +64,4 @@ class ProfileHandler(base.BaseHandler):
                                    {'profile': profile, 'form': form})
 
   def view(self):
-    return
+    return self.render_to_response('driver-lst.html')

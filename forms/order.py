@@ -16,6 +16,9 @@ class OrderForm(wtforms.Form):
   comments = wtforms.StringField(validators=[
       validators.Optional()])
 
+  cost = wtforms.StringField(validators=[
+      validators.Optional()])
+
 
   def validate_origin(self, field):
       field.data = field.data.strip()

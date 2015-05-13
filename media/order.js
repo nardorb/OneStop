@@ -5,7 +5,50 @@ var map;
 
 function initialize() {
 
-	$("#autocomp").submit(function(){//alert(2);
+	function notifyMe() {
+	  // Let's check if the browser supports notifications
+	  if (!("Notification" in window)) {
+	    alert("This browser does not support desktop notification");
+	  }
+
+	  // Let's check whether notification permissions have alredy been granted
+	  else if (Notification.permission === "granted") {
+	    // If it's okay let's create a notification
+	    var notification = new Notification("Hi there!");
+	  }
+
+	  // Otherwise, we need to ask the user for permission
+	  else if (Notification.permission !== 'denied') {
+	    Notification.requestPermission(function (permission) {
+	      // If the user accepts, let's create a notification
+	      if (permission === "granted") {
+	        var notification = new Notification("Hi there!");
+	      }
+	    });
+	  }
+
+	  // At last, if the user has denied notifications, and you
+	  // want to be respectful there is no need to bother them any more.
+	}
+
+
+	$("#send").click(function(){
+		Notification.requestPermission(function(result) {
+		  if (result === 'denied') {
+		    console.log('Permission wasn\'t granted. Allow a retry.');
+		    return;
+		  } else if (result === 'default') {
+		    console.log('The permission request was dismissed.');
+		    return;
+		  }
+		  notifyMe();//Do something with the granted permission.
+		  var audioElement = document.createElement('audio');
+		  audioElement.setAttribute('src', 'audio/notif.mp3');
+		  audioElement.play();
+		});
+	});
+
+	$("#autocomp").submit(function(){
 		if ($("origin").val() != ''){
 			return true;
 		}{
@@ -23,6 +66,18 @@ function initialize() {
 	};
 	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 	directionsDisplay.setMap(map);
+
+	// -----------------------------------------------
+	// Marker Layer
+	//------------------------------------------------
+	map.data.loadGeoJson('js/geojson.json');
+
+	map.data.setStyle({
+	  icon: {
+	        path: google.maps.SymbolPath.CIRCLE,
+	        scale: 10
+	   }
+	});
 
 	//-------------------------------------------------
 	// Geolocation Success
@@ -75,7 +130,7 @@ function initialize() {
 	  //-------------------------------------------------
 	  // Directions
 	  //-------------------------------------------------
-	 var calcRoute = function () {//alert();
+	 var calcRoute = function () {
 		var start = pos;
 		var end = $("#autocomplete").val();
 		var request = {
@@ -114,7 +169,6 @@ function initialize() {
 		    var destinations = response.destinationAddresses;
 		    var outputDiv = document.getElementById("outputDiv");
 		    document.getElementById("outputDiv").innerHTML = '';
-		    // deleteOverlays();
 
 		    for (var i = 0; i < origins.length; i++) {
 		      var results = response.rows[i].elements;
@@ -122,7 +176,16 @@ function initialize() {
 		        document.getElementById("outputDiv").innerHTML += origins[i] + ' to <br>' + destinations[j]
 		            + ': <br> ' + results[j].distance.text + ' in <br>'
 		            + results[j].duration.text + '<br>';
-		        document.getElementById("origin").value += origins[i];
+		            var price;
+		            if (results[j].distance.value >= 100000){
+		            	price = results[j].distance.value/15;
+		            }
+		            else{
+		            	price = results[j].distance.value/40;
+		            }
+		            document.getElementById("outputDiv").innerHTML += 'Estimated Cost: $' +price.toFixed(2);
+								document.getElementById("cost").value += '$' + price.toFixed(2);
+								document.getElementById("origin").value += origins[i];
 		      }
 		    }
 		  }
@@ -132,8 +195,9 @@ function initialize() {
 	  var marker = new google.maps.Marker({
 	        position: pos,
 	        map: map,
-	        title: 'There you are!'
+	        // title: 'There you are!'
 	    });
+
 
 	  var infoWindowOptions = {
 	      content: 'We found you!'
@@ -145,6 +209,36 @@ function initialize() {
 
 	    infoWindow.open(map, marker);
 	  });
+
+	    // ----------------------------------------------
+	    // Circle
+	    // ----------------------------------------------
+
+	    var circle = new google.maps.Circle({
+	  		map: map,
+	  		clickable: false,
+	  		// metres
+	  		radius: 5000,
+	  		fillColor: '#3F89D8',
+	  		fillOpacity: .6,
+	  		strokeColor: 'red',
+	  		strokeOpacity: .4,
+	  		strokeWeight: .8
+	  	});
+
+	    // attach circle to marker
+	    circle.bindTo('center', marker, 'position');
+
+	   //  var userbounds = circle.getBounds();
+
+	   //  $.getJSON('js/geojson.json', {"user":encodeURI(JSON.stringify(user))}, function (data) {
+	   //      var items = [];
+	   //      $.each(data.features, function (key, val) {
+	   //      	$.each(val.Point, function(i,j){
+	   //      		console.log(JSON.stringify(data.Poin));
+	   //      	});
+	   //      });
+	   // });
 
 	  map.setCenter(pos);
 
