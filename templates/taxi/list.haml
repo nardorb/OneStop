@@ -32,9 +32,9 @@
           %td #{taxi.taxi_driver.name}
           %td #{taxi.is_operational}
           %td
-            %a.btn(href="#{uri_for('taxi.assign_driver', id=taxi.key().id())}")
+            %a.btn(href="#{uri_for('taxi.set_driver', id=taxi.key().id())}")
               %i.icon-edit
-              Assign driver
+              Set driver
             %a.btn(href="#{uri_for('taxi.update', id=taxi.key().id())}")
               %i.icon-edit
               Update Taxi

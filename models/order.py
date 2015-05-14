@@ -1,6 +1,7 @@
 from google.appengine.ext import db
 
 from models.profile import Profile
+from models.taxi_driver import TaxiDriver
 
 
 class Order(db.Model):
@@ -11,6 +12,7 @@ class Order(db.Model):
   comments = db.StringProperty(default=None)
   cost = db.StringProperty(default="$0.00")
   profile = db.ReferenceProperty(Profile, collection_name='profile')
+  driver = db.ReferenceProperty(TaxiDriver, collection_name='driver')
 
 
 def get_account(self):

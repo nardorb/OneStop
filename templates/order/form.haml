@@ -9,7 +9,9 @@
     %p.lead
       %a(href="#{uri_for('order.list')}") Orders
       &raquo;
-      -if 'create' in request.url
+      -if 'assign_driver' in request.url
+        Assign Driver
+      -elif 'create' in request.url
         Add Order
 
     %form.form-horizontal(action=".", method="POST")

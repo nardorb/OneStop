@@ -1,18 +1,18 @@
-body { 
-	background-image: url('media/images/sectionbackgrd.jpg');
+body {
+	background-image: url('/media/images/backgrounds/sectionbackgrd.jpg');
 }
 
 
-#map-outer {  
-	height: 440px; 
-	padding: 20px; 
-	border: 2px solid #CCC; 
-	margin-bottom: 20px; 
-	background-color:#FFF 
+#map-outer {
+	height: 440px;
+	padding: 20px;
+	border: 2px solid #CCC;
+	margin-bottom: 20px;
+	background-color:#FFF
 }
 
-#map-canvas{ 
-	height: 400px 
+#map-canvas{
+	height: 400px
 }
 
 @media all and (max-width: 991px) {

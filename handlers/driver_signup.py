@@ -16,8 +16,9 @@ class DriverSignupHandler(base.BaseHandler):
   @login_not_required
   def driver_signup(self):
     form1 = ProfileForm(self.request.POST)
+    form2 = TaxiDriverForm(self.request.POST)
 
-    if self.request.method == 'POST' and form1.validate():
+    if self.request.method == 'POST' and form1.validate() and form2.validate():
       # Create the webapp2_extras.auth user.
       model = self.auth.store.user_model
       ok, user = model.create_user(form1.data['email'],
@@ -45,10 +46,9 @@ class DriverSignupHandler(base.BaseHandler):
                         auth_user_id=user.key.id())
       profile.put()
 
+      self.session.add_flash(messages.PROFILE_CREATE_SUCCESS, level='info')
 
-    form2 = TaxiDriverForm(self.request.POST)
 
-    if self.request.method == 'POST' and form2.validate():
 
       # Ensure that we have a default account setup.
       default_account = Account.all().filter(
@@ -61,7 +61,7 @@ class DriverSignupHandler(base.BaseHandler):
       if TaxiDriver.get_by_driver_id(form2.data['driver_id']):
         self.session.add_flash(messages.TAXI_DRIVER_EXISTS,
                                level='error')
-        return self.render_to_response('taxi_driver/form.haml', {'form': form})
+        return self.render_to_response('taxi_driver/form.haml')
 
       name = ' '.join((form2.data['first_name'],
                                   form2.data['last_name']))
@@ -82,7 +82,7 @@ class DriverSignupHandler(base.BaseHandler):
       user_id = user.key.id()
       self.auth.get_user_by_token(user_id, user.create_auth_token(user_id))
 
-      self.session.add_flash(messages.PROFILE_CREATE_SUCCESS, level='info')
+      self.session.add_flash(messages.TAXI_DRIVER_CREATE_SUCCESS, level='info')
       return self.redirect_to('home')
 
-    return self.render_to_response('driver-signup.html', {'form': form})
+    return self.render_to_response('driver-signup.html')

@@ -7,15 +7,15 @@ class TaxiDriverForm(wtforms.Form):
 
     first_name = wtforms.StringField(validators=[
       validators.Required(),
-      validators.Length(min=3,max=12)])
+      validators.Length(min=3,max=25)])
 
     last_name = wtforms.StringField(validators=[
       validators.Required(),
-      validators.Length(min=3,max=15)])
+      validators.Length(min=3,max=30)])
 
     driver_id = wtforms.StringField(validators=[
       validators.Required(),
-      validators.Length(max=9)])
+      validators.Length(max=12)])
 
     sex = wtforms.StringField(validators=[
       validators.Required()])
@@ -25,7 +25,7 @@ class TaxiDriverForm(wtforms.Form):
 
     tel_number = wtforms.StringField(validators=[
       validators.Required(),
-      validators.Length(min=7,max=11)])
+      validators.Length(min=7,max=15)])
 
     parish = wtforms.StringField(validators=[
       validators.Required(),

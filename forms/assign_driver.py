@@ -2,6 +2,7 @@ import wtforms
 from wtforms import validators
 from models.taxi_driver import TaxiDriver
 from models.taxi import Taxi
+from models.order import Order
 
 
 class AssignDriverForm(wtforms.Form):

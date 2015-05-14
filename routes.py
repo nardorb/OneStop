@@ -47,6 +47,8 @@ _route_info = [
 
     ('order.create', None, '/order/create/', OrderHandler, 'create'),
     ('order.list', None, '/order/', OrderHandler, 'list'),
+    ('order.assign_driver', None, '/order/<id:\d+>/assign_driver/',
+        OrderHandler, 'assign_driver'),
     ('order.delete', None, '/order/<id:\d+>/delete/',
         OrderHandler, 'delete'),
 
@@ -57,8 +59,8 @@ _route_info = [
     ('taxi.create', None, '/taxi/create/', TaxiHandler, 'create'),
     ('taxi.delete', None, '/taxi/<id:\d+>/delete/',
         TaxiHandler, 'delete'),
-    ('taxi.assign_driver', None, '/taxi/<id:\d+>/assign_driver/',
-        TaxiHandler, 'assign_driver'),
+    ('taxi.set_driver', None, '/taxi/<id:\d+>/set_driver/',
+        TaxiHandler, 'set_driver'),
     ('taxi.list', None, '/taxi/', TaxiHandler, 'list'),
     ('taxi.update', None, '/taxi/<id:\d+>/update/',
         TaxiHandler, 'update'),

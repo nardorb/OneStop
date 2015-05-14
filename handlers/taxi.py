@@ -1,5 +1,4 @@
 from forms.taxi import TaxiForm
-# from forms.bus_time import BusTimeForm
 from forms.assign_driver import AssignDriverForm
 from handlers import base
 from library import messages
@@ -43,7 +42,7 @@ class TaxiHandler(base.BaseHandler):
   def delete(self, id):
     taxi = Taxi.get_by_id(int(id), parent=self.get_current_account())
 
-    if not bus:
+    if not taxi:
       self.session.add_flash(messages.TAXI_NOT_FOUND, level='error')
       return self.redirect_to('taxi.list')
 
@@ -61,7 +60,7 @@ class TaxiHandler(base.BaseHandler):
   # May be depreciated
   # check before release
   @role_required(is_admin=True)
-  def assign_driver(self, id):
+  def set_driver(self, id):
     taxi = Taxi.get_by_id(int(id), parent=self.get_current_account())
 
     if not taxi:

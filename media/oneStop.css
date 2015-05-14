@@ -37,7 +37,7 @@ ul{
 }
 
 .signup{
-	border-left: solid 1px #3F89D8; 
+	border-left: solid 1px #3F89D8;
 	padding-left: 15px;
 }
 
@@ -94,7 +94,7 @@ p{
 }
 
 .section2{
-	background-image: url(/media/images/backgrounds/bck.jpg);
+	background-image: url('/media/images/backgrounds/bck.jpg');
 }
 
 .bounce {

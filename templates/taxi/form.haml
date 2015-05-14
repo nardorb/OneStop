@@ -7,12 +7,12 @@
 -block content:
   .container
     %p.lead
-      %a(href="#{uri_for('taxi.list')}") Bus
+      %a(href="#{uri_for('taxi.list')}") Taxi
       &raquo;
       -if 'update' in request.url
         Update Taxi
-      -elif 'assign_driver' in request.url
-        Assign driver
+      -elif 'set_driver' in request.url
+        Set driver
       -elif 'create' in request.url
         Add Taxi
 
