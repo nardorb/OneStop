@@ -18,8 +18,8 @@ class TaxiForm(wtforms.Form):
 
   vehicle_type = wtforms.SelectField(validators=[
     validators.Required()],
-    choices=[('Sedan', 'Sedan'), ('Suv', 'Suv'),
-              ('Limo', 'Limo'), ('Mini Bus','Mini Bus'),
+    choices=[('Sedan', 'Sedan'), ('SUV', 'SUV'), ('Corporate', 'Corporate'),
+              ('Luxury', 'Luxury'), ('Mini Bus','Mini Bus'),
               ('Bus','Bus')])
 
   color = wtforms.SelectField(validators=[

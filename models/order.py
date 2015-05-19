@@ -10,6 +10,7 @@ class Order(db.Model):
   destination = db.StringProperty(default=None)
   passengers = db.StringProperty(default=1)
   comments = db.StringProperty(default=None)
+  vehicle_type = db.StringProperty(default=None)
   cost = db.StringProperty(default="$0.00")
   profile = db.ReferenceProperty(Profile, collection_name='profile')
   driver = db.ReferenceProperty(TaxiDriver, collection_name='driver')

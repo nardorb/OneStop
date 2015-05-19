@@ -14,7 +14,7 @@ function initialize() {
 	  // Let's check whether notification permissions have alredy been granted
 	  else if (Notification.permission === "granted") {
 	    // If it's okay let's create a notification
-	    var notification = new Notification("Hi there!");
+	    var notification = new Notification("Request Submitted");
 	  }
 
 	  // Otherwise, we need to ask the user for permission
@@ -22,7 +22,7 @@ function initialize() {
 	    Notification.requestPermission(function (permission) {
 	      // If the user accepts, let's create a notification
 	      if (permission === "granted") {
-	        var notification = new Notification("Hi there!");
+	        var notification = new Notification("Request Submitted");
 	      }
 	    });
 	  }
@@ -43,7 +43,7 @@ function initialize() {
 		  }
 		  notifyMe();//Do something with the granted permission.
 		  var audioElement = document.createElement('audio');
-		  audioElement.setAttribute('src', 'audio/notif.mp3');
+		  audioElement.setAttribute('src', '/media/audio/notif.mp3');
 		  audioElement.play();
 		});
 	});

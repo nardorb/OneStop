@@ -20,6 +20,7 @@
       %th Profile
       %th Price
       %th Driver Assigned
+      %th Vehicle Type
       %th
     %tbody
       -for order in current_account.get_Orders()
@@ -31,6 +32,7 @@
           %td #{order.profile.name}
           %td #{order.cost}
           %td #{order.driver.name}
+          %td #{order.vehicle_type}
           %td
             %a.btn(href="#{uri_for('order.assign_driver', id=order.key().id())}")
               %i.icon-edit

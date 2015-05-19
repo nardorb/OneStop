@@ -21,7 +21,7 @@ _route_info = [
     ('driver_signup', 'GET', '/driver_signup/',
         PublicStaticHandler('driver-signup.html'), 'get'),
     ('about', 'GET', '/about/',
-        PublicStaticHandler('about.html'), 'get'),
+        PublicStaticHandler('aboutus.html'), 'get'),
     ('copyright', 'GET', '/copyright/',
         PublicStaticHandler('coming_soon.haml'), 'get'),
     ('faq', 'GET', '/faq/',

@@ -16,6 +16,12 @@ class OrderForm(wtforms.Form):
   comments = wtforms.StringField(validators=[
       validators.Optional()])
 
+  vehicle_type = wtforms.SelectField(validators=[
+    validators.Required()],
+    choices=[('Sedan', 'Sedan'), ('SUV', 'SUV'), ('Corporate', 'Corporate'),
+              ('Luxury', 'Luxury'), ('Mini Bus','Mini Bus'),
+              ('Bus','Bus')])
+
   cost = wtforms.StringField(validators=[
       validators.Optional()])
 

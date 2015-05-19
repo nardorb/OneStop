@@ -22,5 +22,7 @@ class HomeHandler(base.BaseHandler):
       return self.render_to_response('order.html', use_cache=False)
       # return self.render_to_response('corporate/manager_dashboard.haml')
 
+    elif self.get_current_profile().is_driver:
+      return self.render_to_response('driver-splash.html', use_cache=False)
 
     return self.render_to_response('order.html', use_cache=False)

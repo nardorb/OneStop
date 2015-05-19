@@ -22,6 +22,7 @@ class OrderHandler(base.BaseHandler):
                 destination=form.data['destination'],
                 passengers=form.data['passengers'],
                 comments=form.data['comments'],
+                vehicle_type=form.data['vehicle_type'],
                 cost=form.data['cost'],
                 profile=self.get_current_profile(),
                 parent=self.get_current_account())
